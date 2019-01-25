@@ -15,35 +15,37 @@ class Article extends Model
      *
      * @return array
      */
-    public function sluggable()
+    
+        protected $table = "articles";
+
+
+     public function sluggable()
     {
         return [
             'slug' => [
                 'source' => 'title'                
             ]
         ];
-    }
-    
-    protected $table = "articles";
+    }    
 
-    protected $fillable = ['name', 'title', 'content', 'users_id', 'categories_id'];
+    protected $fillable = ['title', 'content', 'user_id', 'category_id'];
 
-    public function category ()
+    public function category()
     {
         return $this->belongsTo('App\Category');
     }
 
-    public function user ()
+    public function user()
     {
         return $this->belongsTo('App\User');
     }
 
-    public function images ()
+    public function images()
     {
         return $this->hasMany('App\Image');
     }
 
-    public function tags ()
+    public function tags()
     {
         return $this->belongsToMany('App\Tag');
     }

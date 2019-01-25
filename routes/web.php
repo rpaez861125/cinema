@@ -16,6 +16,10 @@ Route::get('/', function () {
 });
 
 
-Route::get('articles', function() {
-    return "Esta es la parte de los articulos.";
+Route::group(['prefix' => 'articles'], function(){
+
+            Route::get('view/{id}', [
+                'uses' => 'TestController@view',
+                'as'   => 'ArticlesView'
+            ]);
 });

@@ -2,7 +2,7 @@
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
   </button>
-<a class="navbar-brand" href="public/index.php">
+<a class="navbar-brand" href="/cinema/public">
   <img src="imagenes/bt.svg" width="30" height="30" class="d-inline-block align-top" alt="">
       Cinema
 </a>

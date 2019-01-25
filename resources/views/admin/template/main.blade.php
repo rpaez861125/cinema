@@ -47,21 +47,21 @@
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="sr-only">Next</span>
                 </a>
-              </div> 
+        </div> 
        
     <header>            
         @include('admin.template.partials.nav')  
     </header>
     <div class="container-fluid">
-       
-    <footer>
-           
-    </footer>
+        
+        <footer>
+            
+        </footer>
 
-    <section>
-        @yield('content')
-    </section>
-</div>
+        <section>
+            @yield('content')
+        </section>
+    </div>
 
 
     <script src="{{ asset('plugins/styles/popper.min.js') }}"></script>
