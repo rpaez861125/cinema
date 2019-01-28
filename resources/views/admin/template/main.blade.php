@@ -6,61 +6,70 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', 'Default') | Panel de Administración</title>
 
-    <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.min.css') }}" >  
+    <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}" >  
 </head>
 <body> 
    
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner"> 
-                  <div class="carousel-item active">
-                    <img class="d-block w-100" src="imagenes/Slaider-2.jpg" alt="First slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>CINEMA</h5>
-                        <p>"Los auténticos actores son esa raza indomable que interpreta los anhelos y fantasmas del inconsciente colectivo."</p>
-                      </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="imagenes/Slider-1.jpg" alt="Second slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>CINEMA</h5>
-                        <p>"El cine es un vehículo de expresión, pero no estoy muy seguro de que sea un arte."</p>
-                      </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="imagenes/Slaider-3.jpg" alt="Third slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>CINEMA</h5>
-                        <p>"Una película de éxito es aquella que consigue llevar a cabo una idea original."</p>
-                      </div>
-                  </div>
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner"> 
+            <div class="carousel-item active" style="height: 100vh">
+            <img class="d-block w-100" src="{{ asset('imagenes/Slider-1.jpg')}}" alt="First slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>CINEMA</h5>
+                <p>"Los auténticos actores son esa raza indomable que interpreta los anhelos y fantasmas del inconsciente colectivo."</p>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-        </div> 
+            </div>
+            <div class="carousel-item" style="height: 100vh">
+            <img class="d-block w-100" src="{{ asset('imagenes/Slaider-2.jpg')}}" alt="Second slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>CINEMA</h5>
+                <p>"El cine es un vehículo de expresión, pero no estoy muy seguro de que sea un arte."</p>
+                </div>
+            </div>
+            <div class="carousel-item" style="height: 100vh">
+            <img class="d-block w-100" src="{{ asset('imagenes/Slaider-3.jpg')}}" alt="Third slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>CINEMA</h5>
+                <p>"Una película de éxito es aquella que consigue llevar a cabo una idea original."</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div> 
        
-    <header>            
+    <header class="sticky-top">            
         @include('admin.template.partials.nav')  
     </header>
-    <div class="container-fluid">
+    <div>
         
-        <footer>
-            
-        </footer>
 
-        <section>
-            @yield('content')
+        <section class="container  mt-2 pt-2">
+                <div class="alert-secondary pl-1 border" style="font: small-caps 100%/200% serif">            
+                        <h1>@yield('title', 'Default')</h1>
+                </div>                
+                <div>
+                        @yield('content')
+                </div>                            
+            
         </section>
+
+        
+        <footer class="container-fluid bg-dark text-white mt-2 py-2 text-center" style="width: 100%">
+            <p>&copy; 2018-2019 Rol@ndo Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </footer>
+        
     </div>
 
 
