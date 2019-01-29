@@ -60,7 +60,8 @@
                         <h1>@yield('title', 'Default')</h1>
                 </div>                
                 <div>
-                        @yield('content')
+                    @include('flash::message')
+                    @yield('content')
                 </div>                            
             
         </section>

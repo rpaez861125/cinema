@@ -21,12 +21,30 @@
                 <td> {{ $user->id }} </td>
                 <td> {{ $user->name }} </td>
                 <td> {{ $user->email }} </td>
-                <td> {{ $user->type }} </td>
-                <td> <a href="" class="btn btn-danger"></a> <a href="" class="btn btn-warning" ></a> </td>
+                <td> 
+                    @if ($user->type == 'admin')
+                         <span class="badge badge-pill badge-primary">{{ $user->type }}</span>
+                      @else
+                        <span class="badge badge-pill badge-secondary">{{ $user->type }}</span>
+                    @endif  
+                </td>
+                <td> 
+                      <a href=" {{ route('users.edit', $user->id) }} " class="btn btn-warning" >
+                        <img src="{{ asset('imagenes/user/wrench.svg') }}" width="20" height="20" class="d-inline-block align-content-center" alt="">  
+                      </a>
+                      <a href=" {{ route('users.destroy', $user->id) }} " class="btn btn-danger" onclick="return confirm('¿Seguro que sea eleminar el usuario?')">
+                        <img src="{{ asset('imagenes/user/x.svg') }}" width="20" height="20" class="d-inline-block align-content-center" alt="">
+                      </a>                      
+                </td>
               </tr>
           @endforeach
         </tbody>
       </table>
+     <div class="d-flex d-inline-block justify-content-around">
+        {!! $users->render() !!}
+        <a href=" {{ route('users.create')}} " class="btn btn-primary m-2">Crear Usuario</a>
+     </div>
+     
 </div>
     
 @endsection
