@@ -23,4 +23,10 @@ Route::group(['prefix' => 'admin'], function(){
               'uses' => 'UsersController@destroy',
               'as'  => 'users.destroy'  
         ]);
+
+        Route::resource('category', 'CategoriesController');
+        Route::get('category/{id}/destroy',[
+            'uses'  => 'CategoriesController@destroy',
+            'as'    =>  'category.destroy'
+        ]);
 });

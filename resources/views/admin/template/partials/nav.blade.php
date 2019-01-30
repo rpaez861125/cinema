@@ -10,7 +10,7 @@
   <div class="navbar-nav mr-auto ml-auto text-center">
       <a class="nav-item nav-link active"  href="/cinema/public">Inicio</a>
       <a class="nav-item nav-link" href=" {{ route('users.index')}} ">Usuarios</a>
-      <a class="nav-item nav-link" href="#">Servicios</a>
+      <a class="nav-item nav-link" href=" {{ route('category.index')}} ">Categorías</a>
       <a class="nav-item nav-link" href="#">Contactos</a>
       <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

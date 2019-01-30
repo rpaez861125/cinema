@@ -1,6 +1,6 @@
 @extends('admin.template.main')
 
-@section('title', 'Users List')
+@section('title', 'Lista de Usuarios')
 
 @section('content')
 
@@ -9,10 +9,10 @@
         <thead class="thead-light">
           <tr>
             <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Type</th>
-            <th scope="col">Accion</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Acción</th>
           </tr>
         </thead>
         <tbody>

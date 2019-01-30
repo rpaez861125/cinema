@@ -59,8 +59,9 @@
                 <div class="alert-secondary pl-1 border" style="font: small-caps 100%/200% serif">            
                         <h1>@yield('title', 'Default')</h1>
                 </div>                
-                <div>
-                    @include('flash::message')
+                <div class=" border">
+                   <div>@include('flash::message')</div>
+                    @include('admin.template.partials.errors')
                     @yield('content')
                 </div>                            
             
