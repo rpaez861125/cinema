@@ -4,17 +4,19 @@
 
 @section('content')
 
-    {!! Form::open(['route' => 'category.store', 'method' => 'POST', 'class' => 'form-inline justify-content-center flex-column flex-md-row']) !!}
+    {!! Form::open(['route' => 'category.store', 'method' => 'POST']) !!}
 
     <div class="border p-1">
-        <div class="form-group my-2">
-            {!! Form::label('name', 'Nombre:', ['class' => 'mx-2 d-none d-md-block row-sm-5']) !!}
-            {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre',
-             'required']) !!}
+        <div class="form-group mt-1 row">
+            {!! Form::label('name', 'Nombre:', ['class' => 'col-md-4 col-form-label text-md-right']) !!}
+           <div class="col-sm-6">{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre',
+             'required']) !!}</div>
         </div>
-        <div class="form-group justify-content-around">
-          {!! Form::submit('Regristar', ['class' => 'btn btn-primary']) !!}
-        </div> 
+        <div class="form-group row mb-0 mt-1">
+            <div class="col-md-6 offset-md-4">
+                {!! Form::submit('Regristar', ['class' => 'btn btn-primary']) !!}
+            </div>
+        </div>
     </div>       
 
     {!! Form::close() !!}

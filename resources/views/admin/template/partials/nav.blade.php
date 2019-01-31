@@ -22,18 +22,35 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
-        </li>
+        </li>   
   </div>
-  <div class="d-flex flex-row justify-content-center">
-      <a type="button" class="btn btn-outline-light mr-1" href="https://www.facebook.com/" target="_blank">
-        <img src="{{ asset('imagenes/social/facebook.svg') }}" width="25" height="25" class="d-inline-block" alt="">
-      </a>
-      <a type="button" class="btn btn-outline-light mr-1" href="https://www.youtube.com/" target="_blank">
-        <img src="{{ asset('imagenes/social/youtube.svg') }}" width="25" height="25" class="d-inline-block" alt="">
-      </a>
-      <a type="button" class="btn btn-outline-light" href="https://www.twitter.com/" target="_blank">
-        <img src="{{ asset('imagenes/social/twitter.svg') }}" width="25" height="25" class="d-inline-block" alt="">
-      </a>
-  </div>
+  <ul class="navbar-nav ml-auto">
+      <!-- Authentication Links -->
+      @guest
+          <li class="nav-item">
+              <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+          </li>
+         
+      @else
+          <li class="nav-item dropdown">
+              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                  {{ Auth::user()->name }} <span class="caret"></span>
+              </a>
+
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{{ route('logout') }}"
+                     onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                      {{ __('Logout') }}
+                  </a>
+
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      @csrf
+                  </form>
+              </div>
+          </li>
+      @endguest
+  </ul>
+  
 </div>
 </nav>

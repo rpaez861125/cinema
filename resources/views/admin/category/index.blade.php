@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="container">    
-    <table class="table mt-1 border">
+    <table class="table mt-1 border ">
         <thead class="thead-light">
           <tr>
             <th scope="col">ID</th>

@@ -68,8 +68,19 @@
         </section>
 
         
-        <footer class="container-fluid bg-dark text-white mt-2 py-2 text-center" style="width: 100%">
-            <p>&copy; 2018-2019 Rol@ndo Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <footer class="container-fluid bg-dark text-white mt-2 py-2 d-flex d-inline-flex justify-content-around" style="width: 100%">
+            <p class="justify-content-end">&copy; 2018-2019 Rol@ndo Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+            <div class="justify-content-start">
+                    <a type="button" class="btn btn-outline-light mr-1" href="https://www.facebook.com/" target="_blank">
+                      <img src="{{ asset('imagenes/social/facebook.svg') }}" width="25" height="25" class="d-inline-block" alt="">
+                    </a>
+                    <a type="button" class="btn btn-outline-light mr-1" href="https://www.youtube.com/" target="_blank">
+                      <img src="{{ asset('imagenes/social/youtube.svg') }}" width="25" height="25" class="d-inline-block" alt="">
+                    </a>
+                    <a type="button" class="btn btn-outline-light" href="https://www.twitter.com/" target="_blank">
+                      <img src="{{ asset('imagenes/social/twitter.svg') }}" width="25" height="25" class="d-inline-block" alt="">
+                    </a>
+                </div>
         </footer>
         
     </div>
