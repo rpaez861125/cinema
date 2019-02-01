@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use laracast\Flash\Flash;
 use App\Http\Requests\UsersRequest;
+use Validator;
+use Illuminate\Validation\Rule;
 
 class UsersController extends Controller
 {
@@ -77,11 +79,27 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UsersRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $user = User::find($id);
-        $user->fill($request->all());
-        $user->save();
+
+        $validator =  Validator::make($request->all(), [
+                        'email' => [
+                        'required',
+                        Rule::unique('users')->ignore($user->id),
+                            ],
+                        ]);
+                            
+        $user->name = $request->name;
+        $user->type = $request->type;
+        if ($validator->fails()) {
+            return redirect()->route('users.edit', $user )->withErrors($validator)->withInput();        
+        }else{
+          
+            $user->email = $request->email;
+            $user->save();
+        }
+       
 
         flash("Se ha editado el usuario ". $user->name . " de forma exitosa!" )->warning();
         return redirect()->route('users.index');
