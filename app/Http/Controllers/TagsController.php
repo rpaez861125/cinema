@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Category;
+use App\Tag;
 use Laracast\Flash\Flash;
-use App\Http\Requests\CategoriesRequest;
+use App\Http\Requests\TagsRequest;
 
-class CategoriesController extends Controller
+class TagsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,9 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $category = Category::orderBy('id', 'ASC')->paginate(5);
+        $tag = Tag::orderBy('id', 'ASC')->paginate(5);
 
-        return view('admin.categories.index')->with('categorys', $category);
+        return view('admin.tags.index')->with('tags', $tag);
     }
 
     /**
@@ -28,7 +28,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        return view('admin.categories.create');
+        return view('admin.tags.create');
     }
 
     /**
@@ -37,14 +37,13 @@ class CategoriesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CategoriesRequest $request)
+    public function store(TagsRequest $request)
     {
-        
-        $category = new Category($request->all());
-        $category->save();
+        $tag = new Tag($request->all());
+        $tag->save();
 
-        flash("Se ha registrado la categoría ". $category->name . " de forma exitosa!" )->success();
-        return redirect()->route('categories.index');
+        flash("Se ha registrado el tag ". $tag->name . " de forma exitosa!" )->success();
+        return redirect()->route('tags.index');
     }
 
     /**
@@ -66,8 +65,8 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::find($id);
-        return view('admin.categories.edit')->with('category', $category);
+        $tag = Tag::find($id);
+        return view('admin.tags.edit')->with('tag', $tag);
     }
 
     /**
@@ -77,14 +76,14 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CategoriesRequest $request, $id)
+    public function update(TagsRequest $request, $id)
     {
-        $category = Category::find($id);
-        $category->fill($request->all());
-        $category->save();
+        $tag = Tag::find($id);
+        $tag->fill($request->all());
+        $tag->save();
 
-        flash("Se ha editado la categoría ". $category->name . " de forma exitosa!" )->warning();
-        return redirect()->route('categories.index');
+        flash("Se ha editado el tag ". $tag->name . " de forma exitosa!" )->warning();
+        return redirect()->route('tags.index');
     }
 
     /**
@@ -95,10 +94,10 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        $category = Category::find($id);
-        $category->delete();
+        $tag = Tag::find($id);
+        $tag->delete();
 
-        flash("Se ha eliminado la categoría ". $category->name . " de forma exitosa!" )->error();
-        return redirect()->route('categories.index');
+        flash("El tag ". $tag->name . " ha sido borrado!" )->error();
+        return redirect()->route('tags.index');
     }
 }

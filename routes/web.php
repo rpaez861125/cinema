@@ -24,10 +24,16 @@ Route::group(['prefix' => 'admin'], function(){
               'as'  => 'users.destroy'  
         ]);
 
-        Route::resource('category', 'CategoriesController');
-        Route::get('category/{id}/destroy',[
+        Route::resource('categories', 'CategoriesController');
+        Route::get('categories/{id}/destroy',[
             'uses'  => 'CategoriesController@destroy',
-            'as'    =>  'category.destroy'
+            'as'    =>  'categories.destroy'
+        ]);
+
+        Route::resource('tags', 'TagsController');
+        Route::get('tags/{id}/destroy',[
+            'uses'  => 'TagsController@destroy',
+            'as'    =>  'tags.destroy'
         ]);
 
         

@@ -1,10 +1,10 @@
 @extends('admin.template.main')
 
-@section('title', 'Crear Categoría')
+@section('title', 'Crear Tags')
 
 @section('content')
 
-    {!! Form::open(['route' => 'category.store', 'method' => 'POST']) !!}
+    {!! Form::open(['route' => 'tags.store', 'method' => 'POST']) !!}
 
     <div class="border p-1">
         <div class="form-group mt-1 row">
@@ -15,6 +15,7 @@
         <div class="form-group row mb-0 mt-1">
             <div class="col-md-6 offset-md-4">
                 {!! Form::submit('Regristar', ['class' => 'btn btn-primary']) !!}
+                <a href=" {{ route('tags.index')}} " class="btn btn-primary mx-5">Cancelar</a>
             </div>
         </div>
     </div>       

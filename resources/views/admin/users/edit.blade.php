@@ -1,6 +1,6 @@
 @extends('admin.template.main')
 
-@section('title', 'Editar Usuario '. $user->name )
+@section('title', 'Editar Usuario: '. $user->name )
 
 @section('content')
 
@@ -29,6 +29,7 @@
         <div class="form-group row mb-0 mt-1">
             <div class="col-md-6 offset-md-4">
                 {!! Form::submit('Editar', ['class' => 'btn btn-primary']) !!}
+                <a href=" {{ route('users.index')}} " class="btn btn-primary mx-5">Cancelar</a>
             </div>
         </div> 
     </div>       

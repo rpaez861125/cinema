@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use laracast\Flash\Flash;
+use Laracast\Flash\Flash;
 use App\Http\Requests\UsersRequest;
 use Validator;
 use Illuminate\Validation\Rule;

@@ -19,10 +19,10 @@
                 <td> {{ $category->id }} </td>
                 <td> {{ $category->name }} </td>
                 <td> 
-                      <a href=" {{ route('category.edit', $category->id) }} " class="btn btn-warning" >
+                      <a href=" {{ route('categories.edit', $category->id) }} " class="btn btn-warning" >
                         <img src="{{ asset('imagenes/user/wrench.svg') }}" width="20" height="20" class="d-inline-block align-content-center" alt="">  
                       </a>
-                      <a href=" {{ route('category.destroy', $category->id) }} " class="btn btn-danger" onclick="return confirm('¿Seguro que sea eleminar la categoria?')">
+                      <a href=" {{ route('categories.destroy', $category->id) }} " class="btn btn-danger" onclick="return confirm('¿Seguro que sea eleminar la categoria?')">
                         <img src="{{ asset('imagenes/user/x.svg') }}" width="20" height="20" class="d-inline-block align-content-center" alt="">
                       </a>                      
                 </td>
@@ -32,7 +32,7 @@
       </table>
      <div class="d-flex d-inline-block justify-content-around">
         {!! $categorys->render() !!}
-        <a href=" {{ route('category.create')}} " class="btn btn-primary m-2">Crear Categoria</a>
+        <a href=" {{ route('categories.create')}} " class="btn btn-primary m-2">Crear Categoria</a>
      </div>
      
 </div>
