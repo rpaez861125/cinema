@@ -42,7 +42,7 @@
       </table>
      <div class="d-flex d-inline-block justify-content-around">
         {!! $users->render() !!}
-        <a href=" {{ route('users.create')}} " class="btn btn-primary m-2">Crear Usuario</a>
+        <a href=" {{ route('register') }} " class="btn btn-primary m-2">Registrar Usuario</a>
      </div>
      
 </div>
