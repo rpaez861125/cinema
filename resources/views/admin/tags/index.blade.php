@@ -4,6 +4,16 @@
 
 @section('content')
 
+    {!! Form::open(['route' => 'tags.index', 'method' => 'GET', 'class' => 'navbar-form mt-1 col-md-2'])!!}
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text" id="btnGroupAddon2">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </div>
+            </div>
+            {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Buscar']) !!}
+        </div>      
+    {!! Form::close()!!}
 <div class="container">    
     <table class="table mt-1 border ">
         <thead class="thead-light">
@@ -20,10 +30,13 @@
                 <td> {{ $tag->name }} </td>
                 <td> 
                       <a href=" {{ route('tags.edit', $tag->id) }} " class="btn btn-warning" >
-                        <img src="{{ asset('imagenes/user/wrench.svg') }}" width="20" height="20" class="d-inline-block align-content-center" alt="">  
+                        <i class="fa fa-cog" aria-hidden="true"></i>
                       </a>
                       <a href=" {{ route('tags.destroy', $tag->id) }} " class="btn btn-danger" onclick="return confirm('¿Seguro que sea eleminar la categoria?')">
-                        <img src="{{ asset('imagenes/user/x.svg') }}" width="20" height="20" class="d-inline-block align-content-center" alt="">
+                        <span style="color: black" >
+                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                        </span>
+                        
                       </a>                      
                 </td>
               </tr>

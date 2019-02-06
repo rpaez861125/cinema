@@ -14,9 +14,14 @@ class TagsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function __construct()
     {
-        $tag = Tag::orderBy('id', 'ASC')->paginate(5);
+        $this->middleware('auth');
+    }
+    
+     public function index(Request $request)
+    {
+        $tag = Tag::search($request->name)->orderBy('id', 'ASC')->paginate(5);
 
         return view('admin.tags.index')->with('tags', $tag);
     }

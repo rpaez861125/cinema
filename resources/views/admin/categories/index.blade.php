@@ -20,10 +20,12 @@
                 <td> {{ $category->name }} </td>
                 <td> 
                       <a href=" {{ route('categories.edit', $category->id) }} " class="btn btn-warning" >
-                        <img src="{{ asset('imagenes/user/wrench.svg') }}" width="20" height="20" class="d-inline-block align-content-center" alt="">  
+                        <i class="fa fa-cog" aria-hidden="true"></i>
                       </a>
                       <a href=" {{ route('categories.destroy', $category->id) }} " class="btn btn-danger" onclick="return confirm('¿Seguro que sea eleminar la categoria?')">
-                        <img src="{{ asset('imagenes/user/x.svg') }}" width="20" height="20" class="d-inline-block align-content-center" alt="">
+                        <span style="color: black" >
+                         <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                        </span>
                       </a>                      
                 </td>
               </tr>

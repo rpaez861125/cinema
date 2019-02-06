@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', 'Default') | Panel de Administración</title>
 
-    <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}" >  
+    <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}" > 
+    <link rel="stylesheet" href="{{ asset('plugins/chosen/chosen.css') }}" > 
 </head>
 <body> 
    
@@ -88,6 +89,9 @@
 
     <script src="{{ asset('plugins/styles/popper.min.js') }}"></script>
     <script src="{{ asset('plugins/styles/jquery.js') }}"></script>
-    <script src="{{ asset('plugins/styles/bootstrap.min.js') }}"></script>  
+    <script src="{{ asset('plugins/styles/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('plugins/styles/all.js') }}"></script> 
+    <script src="{{ asset('plugins/chosen/chosen.jquery.js') }}"></script>
+    @yield('js') 
 </body>
 </html>

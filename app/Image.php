@@ -8,7 +8,7 @@ class Image extends Model
 {
     protected $table = "images";
 
-    protected $fillable = ['name', 'articles_id'];
+    protected $fillable = ['name', 'article_id'];
 
     public function article ()
     {
