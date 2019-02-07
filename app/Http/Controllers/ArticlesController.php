@@ -11,6 +11,7 @@ use App\Tag;
 use App\User;
 use App\Article;
 use App\Image;
+use App\Http\Requests\ArticlesRequest;
 
 class ArticlesController extends Controller
 {
@@ -19,9 +20,21 @@ class ArticlesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    public function __construct()
     {
-        return view ('admin.articles.index');
+        $this->middleware('auth');
+    }
+
+    public function index(Request $request)
+    {
+        $articles = Article::search($request->title)->orderBy('id', 'DESC')->paginate(5);
+        $articles->each(function($articles){
+            $articles->category;
+            $articles->user;
+        }); 
+
+        return view ('admin.articles.index')->with('articles', $articles);
     }
 
     /**
@@ -47,7 +60,7 @@ class ArticlesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ArticlesRequest $request)
     {
        if($request->file('image'))
        {
@@ -91,7 +104,18 @@ class ArticlesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $article = Article::find($id);
+        $article->category;
+        $my_tag = $article->tags->pluck('id')->ToArray();
+                       
+        $categories = Category::orderBy('name', 'DESC')->pluck('name', 'id');
+        $tag = Tag::orderBy('name', 'DESC')->pluck('name', 'id');
+
+        return view ('admin.articles.edit')
+        ->with('categories', $categories)
+        ->with('article', $article)
+        ->with('tag', $tag)
+        ->with('my_tag', $my_tag);
     }
 
     /**
@@ -103,7 +127,14 @@ class ArticlesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $article = Article::find($id);
+        $article->fill($request->all());
+        $article->save();
+
+        $article->tags()->sync($request->tag);
+
+        flash("Se ha modificado el artículo ". $article->title . " de forma exitosa!" )->warning();
+        return redirect()->route('articles.index');
     }
 
     /**
@@ -114,6 +145,10 @@ class ArticlesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $article = Article::find($id);
+        $article->delete();
+
+        flash("Se ha eliminado el artículo ". $article->title . " de forma exitosa!" )->error();
+        return redirect()->route('articles.index');
     }
 }

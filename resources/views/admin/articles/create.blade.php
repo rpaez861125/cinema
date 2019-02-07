@@ -17,14 +17,14 @@
         <div class="form-group row">
             {!! Form::label('category_id', 'Categoría:', ['class' => 'col-md-4 col-form-label text-md-right']) !!}
             <div class="col-sm-6">
-                {!! Form::select('category_id', $categories, null, ['class' => 'form-control select_category', 'placeholder' => 'Seleccione una categoría..',
+                {!! Form::select('category_id', $categories, null, ['class' => 'form-control select_category',
                 'required']) !!}
             </div>   
         </div>
         <div class="form-group row">
                 {!! Form::label('content', 'Contenido:', ['class' => 'col-md-4 col-form-label text-md-right']) !!}
                 <div class="col-sm-6">
-                    {!! Form::textarea('content', null, ['class' => 'form-control', 'placeholder' => 'Contenido',
+                    {!! Form::textarea('content', null, ['class' => 'form-control content_text', 'placeholder' => 'Contenido',
                     'required'])!!}
                 </div>
         </div>
@@ -56,13 +56,17 @@
 @section('js')
     <script>
         $('.select_tag').chosen({
-            placeholder_text_multiple: "Selecciones no mas de 3 tags.", 
+            placeholder_text_multiple: "Seleccione no mas de 3 tags..", 
             max_selected_options: 3,
             search_contains: true,
-            no_results_text: "No se encontro resultado"
+            no_results_text: "No se encontro resultado",
         });
         $('.select_category').chosen({
+            no_results_text: "No se encontro resultado",
+        });
 
+        $('.content_text').trumbowyg({
+            
         });
     </script>
 @endsection

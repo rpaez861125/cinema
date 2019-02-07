@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}" > 
     <link rel="stylesheet" href="{{ asset('plugins/chosen/chosen.css') }}" > 
+    <link rel="stylesheet" href="{{ asset('plugins/trumbowyg/ui/trumbowyg.css') }}" >
 </head>
 <body> 
    
@@ -92,6 +93,7 @@
     <script src="{{ asset('plugins/styles/bootstrap.min.js') }}"></script>
     <script src="{{ asset('plugins/styles/all.js') }}"></script> 
     <script src="{{ asset('plugins/chosen/chosen.jquery.js') }}"></script>
+    <script src="{{ asset('plugins/trumbowyg/trumbowyg.js') }}"></script>
     @yield('js') 
 </body>
 </html>

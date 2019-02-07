@@ -12,7 +12,7 @@
       <a class="nav-item nav-link active"  href="/cinema/public">Inicio</a>
       <a class="nav-item nav-link" href=" {{ route('users.index')}} ">Usuarios</a>
       <a class="nav-item nav-link" href=" {{ route('categories.index')}} ">Categorías</a>
-      <a class="nav-item nav-link" href="#">Artículos</a>
+      <a class="nav-item nav-link" href=" {{ route('articles.index')}} ">Artículos</a>
       <a class="nav-item nav-link" href="#">Imagenes</a>
       <a class="nav-item nav-link" href="{{ route('tags.index')}}">Tags</a>
       <li class="nav-item dropdown">
