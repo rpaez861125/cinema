@@ -13,7 +13,7 @@
       <a class="nav-item nav-link" href=" {{ route('users.index')}} ">Usuarios</a>
       <a class="nav-item nav-link" href=" {{ route('categories.index')}} ">Categorías</a>
       <a class="nav-item nav-link" href=" {{ route('articles.index')}} ">Artículos</a>
-      <a class="nav-item nav-link" href="#">Imagenes</a>
+      <a class="nav-item nav-link" href=" {{ route('images.index')}} ">Imagenes</a>
       <a class="nav-item nav-link" href="{{ route('tags.index')}}">Tags</a>
       <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -34,11 +34,11 @@
           <li class="nav-item">
               <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
           </li>
-         {{--  @if (Route::has('register'))
+          @if (Route::has('register'))
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
             </li>
-         @endif --}}
+         @endif
          
       @else
           <li class="nav-item dropdown">
