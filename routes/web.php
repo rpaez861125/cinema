@@ -11,17 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ['as' => 'front.index', function () {
+    return view('front.index');
+}]);
 
 
 Route::group(['prefix' => 'admin'], function(){
 
         Route::resource('users','UsersController');
         Route::get('users/{id}/destroy',[
-              'uses' => 'UsersController@destroy',
-              'as'  => 'users.destroy'  
+            'uses' => 'UsersController@destroy',
+            'as'  => 'users.destroy'  
         ]);
 
         Route::resource('categories', 'CategoriesController');

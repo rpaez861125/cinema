@@ -2,14 +2,14 @@
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
   </button>
-<a class="navbar-brand" href="/cinema/public">
+<a class="navbar-brand" href=" {{ route('front.index') }} ">
   <img src="{{ asset('imagenes/bt.svg') }}" width="30" height="30" class="d-inline-block align-top" alt="">
       Cinema
 </a>
 <div class="collapse navbar-collapse text-center" id="navbarTogglerDemo01"> 
 @if (Auth::user())
     <div class="navbar-nav mr-auto ml-auto text-center">
-      <a class="nav-item nav-link active"  href="/cinema/public">Inicio</a>
+      <a class="nav-item nav-link active"  href="/cinema/public/home">Inicio</a>
       <a class="nav-item nav-link" href=" {{ route('users.index')}} ">Usuarios</a>
       <a class="nav-item nav-link" href=" {{ route('categories.index')}} ">Categorías</a>
       <a class="nav-item nav-link" href=" {{ route('articles.index')}} ">Artículos</a>
