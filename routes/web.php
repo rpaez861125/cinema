@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', ['as' => 'front.index', function () {
-    return view('front.index');
-}]);
+Route::get('/', [
+        'uses' => 'FrontController@index',
+        'as' => 'front.index' 
+        ]);
 
 
 Route::group(['prefix' => 'admin'], function(){

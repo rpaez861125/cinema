@@ -9,13 +9,13 @@
 <div class="collapse navbar-collapse text-center" id="navbarTogglerDemo01"> 
 @if (Auth::user())
     <div class="navbar-nav mr-auto ml-auto text-center">
-      <a class="nav-item nav-link active"  href="/cinema/public/home">Inicio</a>
+      <a class="nav-item nav-link" href=" {{ route('front.index') }} ">Inicio</a>
       <a class="nav-item nav-link" href=" {{ route('users.index')}} ">Usuarios</a>
       <a class="nav-item nav-link" href=" {{ route('categories.index')}} ">Categorías</a>
       <a class="nav-item nav-link" href=" {{ route('articles.index')}} ">Artículos</a>
       <a class="nav-item nav-link" href=" {{ route('images.index')}} ">Imagenes</a>
       <a class="nav-item nav-link" href="{{ route('tags.index')}}">Tags</a>
-      <li class="nav-item dropdown">
+      {{-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Dropdown
           </a>
@@ -25,7 +25,7 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
-        </li> 
+        </li>  --}}
   </div>
 @endif 
   <ul class="navbar-nav ml-auto">
@@ -47,11 +47,12 @@
               </a>
 
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/cinema/public/home">Panel Administrativo</a>
                   <a class="dropdown-item" href="{{ route('logout') }}"
-                     onclick="event.preventDefault();
-                                   document.getElementById('logout-form').submit();">
-                      {{ __('Logout') }}
-                  </a>
+                      onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                  </a>            
 
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                       @csrf
