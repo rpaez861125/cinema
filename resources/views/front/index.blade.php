@@ -25,8 +25,11 @@
           </div>
           <div class="card-footer text-muted d-flex d-inline-block justify-content-around">
             <button type="button" class="btn btn-sm btn-outline-secondary">{{$article->category->name}}</button>
-            Posted on January 1, 2017 by
-            <a href="#">Start Bootstrap</a>
+            
+            <span style="color: muted" >
+                <i class="far fa-clock" aria-hidden="true"></i>
+                {{ $article->created_at->diffForHumans() }}
+            </span>            
           </div>
         </div>
         @endforeach
@@ -46,18 +49,24 @@
           <h5 class="card-header">Categorías</h5>
           <div class="card-body">
             <div class="justify-content-around">
-                <ul class="list-group">
-                  <li class="list-group-item" >
-                       Noticias 
-                    <span class="text-danger badge" >14</span>                     
+                <ul class="list-group mb-3">
+                  <li class="list-group-item d-flex justify-content-between lh-condensed" >
+                    <div>
+                        <h6 class="my-0">Noticias</h6>                         
+                    </div> 
+                      <span class="badge-pill badge-danger badge" >14</span>                    
                   </li>
-                  <li class="list-group-item" >
-                      Noticias
-                      <span class="text-danger badge" >14</span>                      
+                  <li class="list-group-item d-flex justify-content-between lh-condensed" >
+                    <div>
+                        <h6 class="my-0">Noticias</h6>                         
+                    </div> 
+                      <span class="badge-pill badge-danger badge" >14</span>                    
                   </li>
-                  <li class="list-group-item" >
-                      Noticias
-                      <span class="text-danger badge" >14</span>                         
+                  <li class="list-group-item d-flex justify-content-between lh-condensed" >
+                    <div>
+                        <h6 class="my-0">Noticias</h6>                         
+                    </div> 
+                      <span class="badge-pill badge-danger badge" >14</span>                    
                   </li>
                 </ul>                            
             </div>
@@ -68,7 +77,14 @@
         <div class="card my-4">
           <h5 class="card-header">Tags</h5>
           <div class="card-body">
-            You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+              <span class="badge badge-pill badge-primary">Primary</span>
+              <span class="badge badge-pill badge-primary">Primary</span>
+              <span class="badge badge-pill badge-primary">Primary</span>
+              <span class="badge badge-pill badge-primary">Primary</span>
+              <span class="badge badge-pill badge-primary">Primary</span>
+              <span class="badge badge-pill badge-primary">Primary</span>
+              <span class="badge badge-pill badge-primary">Primary</span>
+              <span class="badge badge-pill badge-primary">Primary</span>
           </div>
         </div>
 

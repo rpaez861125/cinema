@@ -115,11 +115,14 @@ class ArticlesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $article = Article::find($id);
+        
+        $article = Article::find($id);      
         $article->fill($request->all());
         $article->save();
 
-        $article->tags()->sync($request->tag);
+        $article->tags()->sync($request->tags);
+        
+        
 
         flash("Se ha modificado el artículo ". $article->title . " de forma exitosa!" )->warning();
         return redirect()->route('articles.index');

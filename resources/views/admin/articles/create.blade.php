@@ -64,8 +64,8 @@
             no_results_text: "No se encontro resultado",
         });
 
-        $('.content_text').trumbowyg({
+       /*  $('.content_text').trumbowyg({
             
-        });
+        }); */
     </script>
 @endsection
