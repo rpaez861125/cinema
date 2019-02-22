@@ -4,11 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 
 class Article extends Model 
 {
     
     use Sluggable;
+    use SluggableScopeHelpers;
 
     /**
      * Return the sluggable configuration array for this model.
