@@ -1,6 +1,6 @@
 @extends('admin.template.main')
 
-@section('title', 'Últimos Artículos')
+@section('title', __('app.last_articles'))
   
 
 @section('content')   

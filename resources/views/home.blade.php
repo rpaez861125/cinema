@@ -7,7 +7,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card mt-1">
-                <div class="card-header">Panel Administrativo</div>
+                <div class="card-header">{{ __('app.admin_panel') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))

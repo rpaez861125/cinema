@@ -1,6 +1,6 @@
    <!-- Categories Widget -->
    <div class="card my-4">
-    <h5 class="card-header">Categorías</h5>
+    <h5 class="card-header">{{ __('app.categories') }}</h5>
     <div class="card-body">
       <div class="justify-content-around">
           <ul class="list-group mb-3">
@@ -22,7 +22,7 @@
 
   <!-- Tags Widget -->
   <div class="card my-4">
-    <h5 class="card-header">Tags</h5>
+    <h5 class="card-header">{{ __('app.tags') }}</h5>
     <div class="card-body">
         @foreach ($tags as $tag)
             <a href="{{ route('front.search.tag', $tag->name)}}">

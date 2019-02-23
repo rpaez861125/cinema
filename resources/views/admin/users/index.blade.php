@@ -1,6 +1,6 @@
 @extends('admin.template.main')
 
-@section('title', 'Lista de Usuarios')
+@section('title', __('app.users_list'))
 
 @section('content')
 
@@ -8,11 +8,11 @@
     <table class="table table-striped mt-1 border">
         <thead class="thead-light">
           <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Correo</th>
-            <th scope="col">Tipo</th>
-            <th scope="col">Acción</th>
+            <th scope="col">{{ __('app.id') }}</th>
+            <th scope="col">{{ __('app.name') }}</th>
+            <th scope="col">{{ __('app.mail') }}</th>
+            <th scope="col">{{ __('app.type') }}</th>
+            <th scope="col">{{ __('app.action') }}</th>
           </tr>
         </thead>
         <tbody>
@@ -32,7 +32,7 @@
                       <a href=" {{ route('users.edit', $user->id) }} " class="btn btn-warning" >
                         <i class="fa fa-cog" aria-hidden="true"></i>
                       </a>
-                      <a href=" {{ route('users.destroy', $user->id) }} " class="btn btn-danger" onclick="return confirm('¿Seguro que sea eleminar el usuario?')">
+                      <a href=" {{ route('users.destroy', $user->id) }} " class="btn btn-danger" onclick="return confirm('{{ __('app.confirm') }}')">
                         <span style="color: black" >
                          <i class="fa fa-plus-circle" aria-hidden="true"></i>
                         </span>
@@ -44,7 +44,7 @@
       </table>
      <div class="d-flex d-inline-block justify-content-around">
         {!! $users->render() !!}
-        <a href=" {{ route('register') }} " class="btn btn-primary m-2">Registrar Usuario</a>
+        <a href=" {{ route('register') }} " class="btn btn-primary m-2">{{__('app.register')}}</a>
      </div>
      
 </div>
