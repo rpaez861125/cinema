@@ -10,7 +10,9 @@
           <tr>
             <th scope="col">{{ __('app.id') }}</th>
             <th scope="col">{{ __('app.name') }}</th>
-            <th scope="col">{{ __('app.action') }}</th>
+            @if (Auth::user()->admin())
+             <th scope="col">{{ __('app.action') }}</th>
+            @endif
           </tr>
         </thead>
         <tbody>
@@ -18,16 +20,18 @@
               <tr>
                 <td> {{ $category->id }} </td>
                 <td> {{ $category->name }} </td>
-                <td> 
+                @if (Auth::user()->admin())                 
+                  <td> 
                       <a href=" {{ route('categories.edit', $category->id) }} " class="btn btn-warning" >
                         <i class="fa fa-cog" aria-hidden="true"></i>
                       </a>
                       <a href=" {{ route('categories.destroy', $category->id) }} " class="btn btn-danger" onclick="return confirm('{{ __('app.confirm_categry') }}')">
                         <span style="color: black" >
-                         <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
                         </span>
                       </a>                      
-                </td>
+                  </td>
+                @endif
               </tr>
           @endforeach
         </tbody>

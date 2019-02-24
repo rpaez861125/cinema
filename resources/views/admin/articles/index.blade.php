@@ -21,7 +21,7 @@
                     <th scope="col">{{ __('app.title') }}</th>
                     <th scope="col">{{ __('app.categories') }}</th>
                     <th scope="col">{{ __('app.users') }}</th>
-                    <th scope="col">{{ __('app.action') }}</th>
+                    <th scope="col">{{ __('app.action') }}</th>   
                 </tr>
             </thead>
             <tbody>                                 
@@ -32,14 +32,17 @@
                         <td> {{ $article->category->name }} </td>
                         <td> {{ $article->user->name }} </td>
                         <td>
-                            <a href=" {{ route('articles.edit', $article->id) }} " class="btn btn-warning" >
-                                <i class="fa fa-cog" aria-hidden="true"></i>
-                                </a>
-                            <a href=" {{ route('articles.destroy', $article->id) }} " class="btn btn-danger" onclick="return confirm('{{ __('app.confirm_articcle') }}')">
-                                <span style="color: black" >
-                                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                </span>
-                            </a>  
+                            @if (Auth::user()->id == $article->user->id || Auth::user()->admin())
+                                <a href=" {{ route('articles.edit', $article->id) }} " class="btn btn-warning" >
+                                    <i class="fa fa-cog" aria-hidden="true"></i>
+                                    </a>                      
+                           
+                                <a href=" {{ route('articles.destroy', $article->id) }} " class="btn btn-danger" onclick="return confirm('{{ __('app.confirm_articcle') }}')">
+                                    <span style="color: black" >
+                                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                    </span>
+                                </a>  
+                            @endif
                         </td>
                     </tr>                  
                 @endforeach                               

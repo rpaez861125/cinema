@@ -20,7 +20,9 @@
           <tr>
             <th scope="col">{{ __('app.id') }}</th>
             <th scope="col">{{ __('app.name') }}</th>
-            <th scope="col">{{ __('app.action') }}</th>
+            @if (Auth::user()->admin())
+             <th scope="col">{{ __('app.action') }}</th>
+            @endif
           </tr>
         </thead>
         <tbody>
@@ -28,7 +30,8 @@
               <tr>
                 <td> {{ $tag->id }} </td>
                 <td> {{ $tag->name }} </td>
-                <td> 
+                @if (Auth::user()->admin())
+                  <td> 
                       <a href=" {{ route('tags.edit', $tag->id) }} " class="btn btn-warning" >
                         <i class="fa fa-cog" aria-hidden="true"></i>
                       </a>
@@ -38,7 +41,8 @@
                         </span>
                         
                       </a>                      
-                </td>
+                  </td>
+                @endif
               </tr>
           @endforeach
         </tbody>
