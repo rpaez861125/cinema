@@ -5,6 +5,7 @@ return [
     'last_articles'       => 'Últimos Artículos',
     'home'                => 'Inicio',
     'welcome'             => 'Bienvenido',
+    'comments'            => 'Comentarios',
     'users'               => 'Usuarios',
     'categories'          => 'Categorías',
     'articles'            => 'Artículos',

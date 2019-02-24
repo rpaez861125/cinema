@@ -14,7 +14,7 @@
        
              {!! $article->content !!}
              <hr>
-             <h3>Comentarios</h3>
+             <h3>{{ __('app.comments') }}</h3>
              @foreach ($article->tags as $tag)
                  <span style="color: grey" >{{ $tag->name }}</span>
              @endforeach

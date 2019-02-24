@@ -5,6 +5,7 @@ return [
     'last_articles'       => 'Last Articles',
     'home'                => 'Home',
     'welcome'             => 'Welcome',
+    'comments'            => 'Comments',
     'users'               => 'Users',
     'categories'          => 'Categories',
     'articles'            => 'Articles',
