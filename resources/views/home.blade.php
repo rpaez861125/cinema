@@ -1,6 +1,6 @@
 @extends('admin.template.main')
 
-@section('title', 'Bienvenido ' . Auth::user()->name)
+@section('title', __('app.welcome').' ' . Auth::user()->name)
 
 @section('content')
 <div class="container">
@@ -15,7 +15,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
                     You are logged in!
                 </div>
             </div>

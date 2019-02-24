@@ -30,7 +30,7 @@
         </div>
         <div class="form-group row mb-0 mt-1">
             <div class="col-md-6 offset-md-4">
-                {!! Form::submit({{ __('app.register') }}, ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit(__('app.register'), ['class' => 'btn btn-primary']) !!}
                 <a href=" {{ route('users.index')}} " class="btn btn-primary mx-5">{{ __('app.cancel') }}</a>
             </div>
         </div>

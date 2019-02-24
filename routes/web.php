@@ -70,7 +70,6 @@ Route::group(['prefix' => 'admin', 'middleware'=> ['auth']], function(){
 });
 
 Auth::routes(); 
-Route::get('/home', 'HomeController@index')->name('home');
-
-
-
+Route::group(['middleware' => 'admin'], function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+});

@@ -1,6 +1,6 @@
 @extends('admin.template.main')
 
-@section('title', 'Listado de Artículos')
+@section('title', __('app.articles_list'))
 
 @section('content')
     {!! Form::open(['route' => 'articles.index', 'method' => 'GET', 'class' => 'navbar-form mt-1 col-md-2'])!!}
@@ -10,18 +10,18 @@
             <i class="fa fa-search" aria-hidden="true"></i>
             </div>
         </div>
-        {!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Buscar']) !!}
+        {!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => __('app.search')]) !!}
     </div>      
     {!! Form::close()!!}
     <div class="container">
         <table class="table table-striped mt-1 border">
             <thead class="thead-light" >
                 <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Títuto</th>
-                    <th scope="col">Categoría</th>
-                    <th scope="col">Usuario</th>
-                    <th scope="col">Acción</th>
+                    <th scope="col">{{ __('app.id') }}</th>
+                    <th scope="col">{{ __('app.title') }}</th>
+                    <th scope="col">{{ __('app.categories') }}</th>
+                    <th scope="col">{{ __('app.users') }}</th>
+                    <th scope="col">{{ __('app.action') }}</th>
                 </tr>
             </thead>
             <tbody>                                 
@@ -35,7 +35,7 @@
                             <a href=" {{ route('articles.edit', $article->id) }} " class="btn btn-warning" >
                                 <i class="fa fa-cog" aria-hidden="true"></i>
                                 </a>
-                            <a href=" {{ route('articles.destroy', $article->id) }} " class="btn btn-danger" onclick="return confirm('¿Seguro que sea eleminar el artículo?')">
+                            <a href=" {{ route('articles.destroy', $article->id) }} " class="btn btn-danger" onclick="return confirm('{{ __('app.confirm_articcle') }}')">
                                 <span style="color: black" >
                                     <i class="fa fa-plus-circle" aria-hidden="true"></i>
                                 </span>
@@ -47,7 +47,7 @@
         </table>
         <div class="d-flex d-inline-block justify-content-around">
                 {!! $articles->render() !!}
-                <a href=" {{ route('articles.create') }} " class="btn btn-primary m-2">Crear Artículo</a>
+                <a href=" {{ route('articles.create') }} " class="btn btn-primary m-2">{{ __('app.register') }}</a>
              </div> 
     </div>
     

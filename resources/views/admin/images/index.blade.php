@@ -1,6 +1,6 @@
 @extends('admin.template.main')
 
-@section('title', 'Galería de Imagenes')
+@section('title', __('app.gallery'))
 
 @section('content')
     <div class="row">

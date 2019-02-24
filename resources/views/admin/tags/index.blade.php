@@ -1,6 +1,6 @@
 @extends('admin.template.main')
 
-@section('title', 'Lista de Tags')
+@section('title', __('app.tags_list'))
 
 @section('content')
 
@@ -11,16 +11,16 @@
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </div>
             </div>
-            {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Buscar']) !!}
+            {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => __('app.search')]) !!}
         </div>      
     {!! Form::close()!!}
 <div class="container">    
     <table class="table table-striped mt-1 border ">
         <thead class="thead-light">
           <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Acción</th>
+            <th scope="col">{{ __('app.id') }}</th>
+            <th scope="col">{{ __('app.name') }}</th>
+            <th scope="col">{{ __('app.action') }}</th>
           </tr>
         </thead>
         <tbody>
@@ -32,7 +32,7 @@
                       <a href=" {{ route('tags.edit', $tag->id) }} " class="btn btn-warning" >
                         <i class="fa fa-cog" aria-hidden="true"></i>
                       </a>
-                      <a href=" {{ route('tags.destroy', $tag->id) }} " class="btn btn-danger" onclick="return confirm('¿Seguro que sea eleminar la categoria?')">
+                      <a href=" {{ route('tags.destroy', $tag->id) }} " class="btn btn-danger" onclick="return confirm('{{__('app.confirm_tags')}}')">
                         <span style="color: black" >
                             <i class="fa fa-plus-circle" aria-hidden="true"></i>
                         </span>
@@ -45,7 +45,7 @@
       </table>
      <div class="d-flex d-inline-block justify-content-around">
         {!! $tags->render() !!}
-        <a href=" {{ route('tags.create')}} " class="btn btn-primary m-2">Crear Tags</a>
+        <a href=" {{ route('tags.create')}} " class="btn btn-primary m-2">{{ __('app.register') }}</a>
      </div>
      
 </div>

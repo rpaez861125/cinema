@@ -1,6 +1,6 @@
 @extends('admin.template.main')
 
-@section('title', 'Editar Artículo-' . $article->title)
+@section('title', __('app.edit_article').':' . $article->title)
 
 @section('content')
 
@@ -8,28 +8,28 @@
 
     <div class="border p-1" > 
         <div class="form-group mt-1 row">
-            {!! Form::label('title', 'Título:', ['class' => 'col-md-4 col-form-label text-md-right']) !!}
+            {!! Form::label('title', __('app.title').':', ['class' => 'col-md-4 col-form-label text-md-right']) !!}
             <div class="col-sm-6" >
                 {!! Form::text('title', $article->title, ['class' => 'form-control', 'placeholder' => 'Título',
                 'required']) !!}
             </div>
         </div>
         <div class="form-group row">
-            {!! Form::label('category_id', 'Categoría:', ['class' => 'col-md-4 col-form-label text-md-right']) !!}
+            {!! Form::label('category_id', __('app.categories').':', ['class' => 'col-md-4 col-form-label text-md-right']) !!}
             <div class="col-sm-6">
                 {!! Form::select('category_id', $categories, $article->category->id, ['class' => 'form-control select_category',
                 'required']) !!}
             </div>   
         </div>
         <div class="form-group row">
-                {!! Form::label('content', 'Contenido:', ['class' => 'col-md-4 col-form-label text-md-right']) !!}
+                {!! Form::label('content', __('app.content').':', ['class' => 'col-md-4 col-form-label text-md-right']) !!}
                 <div class="col-sm-6">
-                    {!! Form::textarea('content', $article->content, ['class' => 'form-control content_text', 'placeholder' => 'Contenido',
+                    {!! Form::textarea('content', $article->content, ['class' => 'form-control content_text',
                     'required'])!!}
                 </div>
         </div>
         <div class="form-group row" >
-            {!! Form::label('tags', 'Tags:', ['class' => 'col-md-4 col-form-label text-md-right']) !!}
+            {!! Form::label('tags', __('app.tags').':', ['class' => 'col-md-4 col-form-label text-md-right']) !!}
             <div class="col-sm-6">
                 {!! Form::select('tags[]', $tag, $my_tag, ['class' => 'form-control select_tag', 'multiple',
                 'required']) !!}
@@ -37,8 +37,8 @@
         </div>
             <div class="form-group row mb-0 mt-1">
             <div class="col-md-6 offset-md-4">
-                {!! Form::submit('Editar', ['class' => 'btn btn-primary']) !!}
-                <a href=" {{ route('articles.index')}} " class="btn btn-primary mx-5">Cancelar</a>
+                {!! Form::submit(__('app.edit'), ['class' => 'btn btn-primary']) !!}
+                <a href=" {{ route('articles.index')}} " class="btn btn-primary mx-5">{{ __('app.cancel') }}</a>
             </div>
         </div>
         
@@ -59,8 +59,8 @@
             no_results_text: "No se encontro resultado",
         });
 
-       /*  $('.content_text').trumbowyg({
+        $('.content_text').trumbowyg({
             
-        }); */
+        });
     </script>
 @endsection
