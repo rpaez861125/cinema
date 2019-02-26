@@ -73,16 +73,16 @@
         },
         {
             "name": "cviebrock/eloquent-sluggable",
-            "version": "4.6.0",
+            "version": "4.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cviebrock/eloquent-sluggable.git",
-                "reference": "d8a6982d32a7fe92f42b1c33a34e89d33516c2fd"
+                "reference": "e05e778d3ff87a010b0dd73aab00a7c72761ff81"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cviebrock/eloquent-sluggable/zipball/d8a6982d32a7fe92f42b1c33a34e89d33516c2fd",
-                "reference": "d8a6982d32a7fe92f42b1c33a34e89d33516c2fd",
+                "url": "https://api.github.com/repos/cviebrock/eloquent-sluggable/zipball/e05e778d3ff87a010b0dd73aab00a7c72761ff81",
+                "reference": "e05e778d3ff87a010b0dd73aab00a7c72761ff81",
                 "shasum": ""
             },
             "require": {
@@ -132,7 +132,7 @@
                 "slug",
                 "sluggable"
             ],
-            "time": "2018-09-05T02:03:48+00:00"
+            "time": "2019-02-24T19:36:12+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1700,16 +1700,16 @@
         },
         {
             "name": "opis/closure",
-            "version": "3.1.5",
+            "version": "3.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/opis/closure.git",
-                "reference": "41f5da65d75cf473e5ee582df8fc7f2c733ce9d6"
+                "reference": "ccb8e3928c5c8181c76cdd0ed9366c5bcaafd91b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/opis/closure/zipball/41f5da65d75cf473e5ee582df8fc7f2c733ce9d6",
-                "reference": "41f5da65d75cf473e5ee582df8fc7f2c733ce9d6",
+                "url": "https://api.github.com/repos/opis/closure/zipball/ccb8e3928c5c8181c76cdd0ed9366c5bcaafd91b",
+                "reference": "ccb8e3928c5c8181c76cdd0ed9366c5bcaafd91b",
                 "shasum": ""
             },
             "require": {
@@ -1757,7 +1757,7 @@
                 "serialization",
                 "serialize"
             ],
-            "time": "2019-01-14T14:45:33+00:00"
+            "time": "2019-02-22T10:30:00+00:00"
         },
         {
             "name": "paragonie/random_compat",

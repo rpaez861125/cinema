@@ -29,12 +29,14 @@
                     @endif  
                 </td>
                 <td> 
-                      <a href=" {{ route('users.edit', $user->id) }} " class="btn btn-warning" >
-                        <i class="fa fa-cog" aria-hidden="true"></i>
+                      <a href=" {{ route('users.edit', $user->id) }} " class="btn btn-link" >
+                        <span style="color: primary" >
+                          <i class="fas fa-edit" aria-hidden="true"></i>
+                        </span>
                       </a>
-                      <a href=" {{ route('users.destroy', $user->id) }} " class="btn btn-danger" onclick="return confirm('{{ __('app.confirm') }}')">
-                        <span style="color: black" >
-                         <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                      <a href=" {{ route('users.destroy', $user->id) }} " class="btn btn-link" onclick="return confirm('{{ __('app.confirm') }}')">
+                        <span style="color: red" >
+                          <i class="far fa-trash-alt"></i>
                         </span>
                       </a>                      
                 </td>

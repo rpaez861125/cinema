@@ -22,12 +22,14 @@
                 <td> {{ $category->name }} </td>
                 @if (Auth::user()->admin())                 
                   <td> 
-                      <a href=" {{ route('categories.edit', $category->id) }} " class="btn btn-warning" >
-                        <i class="fa fa-cog" aria-hidden="true"></i>
+                      <a href=" {{ route('categories.edit', $category->id) }} " class="btn btn-link" >
+                        <span style="color: primary" >
+                          <i class="fas fa-edit" aria-hidden="true"></i>
+                        </span>
                       </a>
-                      <a href=" {{ route('categories.destroy', $category->id) }} " class="btn btn-danger" onclick="return confirm('{{ __('app.confirm_categry') }}')">
-                        <span style="color: black" >
-                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                      <a href=" {{ route('categories.destroy', $category->id) }} " class="btn btn-link" onclick="return confirm('{{ __('app.confirm_categry') }}')">
+                        <span style="color: red" >
+                        <i class="far fa-trash-alt" aria-hidden="true"></i>
                         </span>
                       </a>                      
                   </td>
